@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    min-width: 30vw;
+    min-height: 50vh;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 25px;
+    margin: 30px;
+    border-radius: 10px;
+
+  }
+  
