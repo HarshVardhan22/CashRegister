@@ -1,4 +1,4 @@
-import "./App.module.css";
+import styles from"./App.module.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Components/Home/Home";
 import { useState } from "react";
@@ -65,7 +65,7 @@ const App = () => {
   
 
   return (
-    <div className="App">
+    <div className={styles.container}>
       <Navbar />
       <Home setValue={setValue}/>
       <Cash bill={billAmount} cash={cashGiven} one ={one} five ={five} ten = {ten} twenty ={twenty} hundred = {hundred} fiveHundred = {fiveHundred} twoThousand ={twoThousand}/>
