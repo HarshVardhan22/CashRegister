@@ -2,23 +2,25 @@ import React, { useState } from "react";
 import styles from "./Home.module.css";
 import HeadShake from "react-reveal/HeadShake";
 
-const Home = ({setValue}) => {
-  const [billAmount, setBillAmount] = useState();
-  const [cashGiven, setCashGiven] = useState();
-
+const Home = ({ setValue }) => {
+  const [billAmount, setBillAmount] = useState("");
+  const [cashGiven, setCashGiven] = useState("");
 
 
   const handleBill = (e) => {
-    setBillAmount(e.target.value);
+    setBillAmount((e.target.value));
   };
 
   const handleCash = (e) => {
-    setCashGiven(e.target.value);
+    setCashGiven((e.target.value));
   };
 
   const calculateChange = (e) => {
-      e.preventDefault();
-    setValue(billAmount,cashGiven)
+    e.preventDefault();
+  
+    if (parseInt(billAmount) >parseInt(cashGiven)) {
+      alert("Cash Given is Less Than Bill Amount!");
+    } else setValue((billAmount), (cashGiven));
   };
 
   return (
@@ -32,23 +34,21 @@ const Home = ({setValue}) => {
         placeholder="Enter Bill Amount"
       />
       {billAmount && (
-          <HeadShake>
+        <HeadShake>
           <input
-          type="number"
-          value={cashGiven}
-          onChange={handleCash}
-          required
-          min="0"
-          placeholder="Enter Cash Received"
-        />
-          </HeadShake>
-       
+            type="number"
+            value={cashGiven}
+            onChange={handleCash}
+            required
+            min={billAmount}
+            placeholder="Enter Cash Received"
+          />
+        </HeadShake>
       )}
       {billAmount && cashGiven && (
-          <HeadShake>
+        <HeadShake>
           <button onClick={calculateChange}>Submit</button>
-          </HeadShake>
-      
+        </HeadShake>
       )}
     </div>
   );
