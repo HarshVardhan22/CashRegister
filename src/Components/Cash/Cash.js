@@ -3,9 +3,7 @@ import styles from "./Cash.module.css";
 import Fade from "react-reveal/Fade";
 //, one ,five,ten,twenty,hundred,fiveHundred,twoThousand
 
-const Cash = ({ bill=0, cash=0 }) => {
-  // const [billAmount,setBillAmount] = useState (bill);
-  // const [cashGiven,setCashGiven] = useState (cash);
+const Cash = ({ bill = 0, cash = 0 }) => {
   const [five, setFive] = useState(0);
   const [one, setOne] = useState(0);
   const [ten, setTen] = useState(0);
@@ -14,11 +12,6 @@ const Cash = ({ bill=0, cash=0 }) => {
   const [fiveHundred, setFiveHundred] = useState(0);
   const [twoThousand, setTwoThousand] = useState(0);
 
-  useEffect(() => {
-    // setBillAmount(bill)
-    // setCashGiven(cash)
-    calculateChange();
-  }, [bill,cash])
 
   const calculateChange = () => {
     setFive(0);
@@ -29,10 +22,9 @@ const Cash = ({ bill=0, cash=0 }) => {
     setFiveHundred(0);
     setTwoThousand(0);
 
-   
     let changeCash = cash - bill;
-    console.log(changeCash)
-   
+    console.log(changeCash);
+
     while (changeCash >= 2000) {
       setTwoThousand((twoThousand) => twoThousand + 1);
       changeCash -= 2000;
@@ -62,22 +54,53 @@ const Cash = ({ bill=0, cash=0 }) => {
       setOne((one) => one + 1);
       changeCash -= 1;
     }
-
   };
   
+  useEffect(() => {
+    calculateChange();
+  }, [bill, cash]);
 
   return (
     <div className={styles.container}>
-      <Fade right  >
+      <Fade right>
+      <h2>Cash Recieved : {cash}</h2>
         <h2>Bill Amount : {bill}</h2>
-        <h2>Cash Recieved : {cash}</h2>
-        <h3>2000: {twoThousand}</h3>
-        <h3>500: {fiveHundred}</h3>
-        <h3>100: {hundred}</h3>
-        <h3>20: {twenty}</h3>
-        <h3>10: {ten}</h3>
-        <h3>5: {five}</h3>
-        <h3>1: {one}</h3>
+        {<h2>To return : {cash-bill}</h2>}
+       
+        <div className={styles.subContainer}>
+        <div className={styles.miniContainer}>
+            <h3>Note Value : </h3>
+            <h3> Quantity : </h3>
+          </div>
+          <div className={styles.miniContainer}>
+            <h3>2000</h3>
+            <h3> {twoThousand}</h3>
+          </div>
+          <div className={styles.miniContainer}>
+            <h3>500 </h3>
+            <h3> {fiveHundred}</h3>
+          </div>
+          <div className={styles.miniContainer}>
+            <h3>100</h3>
+            <h3> {hundred}</h3>
+          </div>
+          <div className={styles.miniContainer}>
+            <h3>20 </h3>
+            <h3> {twenty}</h3>
+          </div>
+          <div className={styles.miniContainer}>
+            <h3>10 </h3>
+            <h3> {ten}</h3>
+          </div>
+          <div className={styles.miniContainer}>
+            <h3>5 </h3>
+            <h3> {five}</h3>
+          </div>
+          <div className={styles.miniContainer}>
+            <h3>1 </h3>
+            <h3> {one}</h3>
+          </div>
+        </div>
       </Fade>
     </div>
   );
