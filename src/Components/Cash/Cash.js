@@ -3,7 +3,7 @@ import styles from "./Cash.module.css";
 import Fade from "react-reveal/Fade";
 //, one ,five,ten,twenty,hundred,fiveHundred,twoThousand
 
-const Cash = ({ bill = 0, cash = 0 }) => {
+const Cash = ({ bill =0, cash=0 }) => {
   const [five, setFive] = useState(0);
   const [one, setOne] = useState(0);
   const [ten, setTen] = useState(0);
@@ -13,52 +13,52 @@ const Cash = ({ bill = 0, cash = 0 }) => {
   const [twoThousand, setTwoThousand] = useState(0);
 
 
-  const calculateChange = () => {
-    setFive(0);
-    setOne(0);
-    setTen(0);
-    setTwenty(0);
-    setHundred(0);
-    setFiveHundred(0);
-    setTwoThousand(0);
 
-    let changeCash = cash - bill;
-    console.log(changeCash);
-
-    while (changeCash >= 2000) {
-      setTwoThousand((twoThousand) => twoThousand + 1);
-      changeCash -= 2000;
-    }
-    while (changeCash >= 500) {
-      setFiveHundred((fiveHundred) => fiveHundred + 1);
-      changeCash -= 500;
-    }
-
-    while (changeCash >= 100) {
-      setHundred((hundred) => hundred + 1);
-      changeCash -= 100;
-    }
-    while (changeCash >= 20) {
-      setTwenty((twenty) => twenty + 1);
-      changeCash -= 20;
-    }
-    while (changeCash >= 10) {
-      setTen((ten) => ten + 1);
-      changeCash -= 10;
-    }
-    while (changeCash >= 5) {
-      setFive((five) => five + 1);
-      changeCash -= 5;
-    }
-    while (changeCash > 0) {
-      setOne((one) => one + 1);
-      changeCash -= 1;
-    }
-  };
-  
   useEffect(() => {
-    calculateChange();
-  }, [bill, cash]);
+    // eslint-disable-next-line
+    const calculateChange = () => {
+      setFive(0);
+      setOne(0);
+      setTen(0);
+      setTwenty(0);
+      setHundred(0);
+      setFiveHundred(0);
+      setTwoThousand(0);
+  
+      let changeCash = cash - bill;
+      console.log(changeCash);
+  
+      while (changeCash >= 2000) {
+        setTwoThousand((twoThousand) => twoThousand + 1);
+        changeCash -= 2000;
+      }
+      while (changeCash >= 500) {
+        setFiveHundred((fiveHundred) => fiveHundred + 1);
+        changeCash -= 500;
+      }
+  
+      while (changeCash >= 100) {
+        setHundred((hundred) => hundred + 1);
+        changeCash -= 100;
+      }
+      while (changeCash >= 20) {
+        setTwenty((twenty) => twenty + 1);
+        changeCash -= 20;
+      }
+      while (changeCash >= 10) {
+        setTen((ten) => ten + 1);
+        changeCash -= 10;
+      }
+      while (changeCash >= 5) {
+        setFive((five) => five + 1);
+        changeCash -= 5;
+      }
+      while (changeCash > 0) {
+        setOne((one) => one + 1);
+        changeCash -= 1;
+      }
+    };
+  }, [bill, cash ]);
 
   return (
     <div className={styles.container}>
