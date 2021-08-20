@@ -76,32 +76,32 @@ const Cash = ({ bill = 0, cash = 0 }) => {
             <h3> Quantity : </h3>
           </div>
           <div className={styles.miniContainer}>
-            <h3>2000</h3>
-            <h3> {twoThousand}</h3>
+            <h3 style={{color:"magenta"}} >2000</h3>
+            <h3 style={{color:"magenta"}}> {twoThousand}</h3>
           </div>
           <div className={styles.miniContainer}>
-            <h3>500 </h3>
-            <h3> {fiveHundred}</h3>
+            <h3 style={{color:"green"}}>500 </h3>
+            <h3 style={{color:"green"}}> {fiveHundred}</h3>
           </div>
           <div className={styles.miniContainer}>
-            <h3>100</h3>
-            <h3> {hundred}</h3>
+            <h3 style={{color:"purple"}}>100</h3>
+            <h3 style={{color:"purple"}}> {hundred}</h3>
           </div>
           <div className={styles.miniContainer}>
-            <h3>20 </h3>
-            <h3> {twenty}</h3>
+            <h3 style={{color:"orangered"}}>20 </h3>
+            <h3 style={{color:"orangered"}}> {twenty}</h3>
           </div>
           <div className={styles.miniContainer}>
-            <h3>10 </h3>
-            <h3> {ten}</h3>
+            <h3 style={{color:"brown"}}>10 </h3>
+            <h3 style={{color:"brown"}}> {ten}</h3>
           </div>
           <div className={styles.miniContainer}>
-            <h3>5 </h3>
-            <h3> {five}</h3>
+            <h3 style={{color:"seagreen"}}>5 </h3>
+            <h3 style={{color:"seagreen"}}> {five}</h3>
           </div>
           <div className={styles.miniContainer}>
-            <h3>1 </h3>
-            <h3> {one}</h3>
+            <h3 style={{color:""}}>1 </h3>
+            <h3 style={{color:""}}> {one}</h3>
           </div>
         </div>
       </Fade>

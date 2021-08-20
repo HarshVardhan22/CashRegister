@@ -1,13 +1,20 @@
-.container{
-  display:flex;
+.container {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  min-width:100vw;
+  min-width: 90vw;
+  border-radius: 5px;
+  background: #e0e0e0;
+  box-shadow: 9px 9px 18px #898989, -9px -9px 18px #ffffff;
+  min-height: 80vh;
 }
 
-.parent{
-  min-width:100vw;
+.parent {
+  min-width: 100vw;
+  min-height: 100vh;
   display: flex;
+  background: #e0e0e0;
   flex-direction: column;
   justify-content: center;
   align-items: center;

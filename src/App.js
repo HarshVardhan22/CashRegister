@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <div className={styles.parent}>
-    <h1>Cash Register</h1>
+      <h1>Cash Register</h1>
       <div className={styles.container}>
         <Navbar />
         <Home setValue={setValue} />
