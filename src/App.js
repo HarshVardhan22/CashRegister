@@ -13,10 +13,13 @@ const App = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <Navbar />
-      <Home setValue={setValue} />
-      <Cash bill={billAmount} cash={cashGiven} />
+    <div className={styles.parent}>
+    <h1>Cash Register</h1>
+      <div className={styles.container}>
+        <Navbar />
+        <Home setValue={setValue} />
+        <Cash bill={billAmount} cash={cashGiven} />
+      </div>
     </div>
   );
 };
