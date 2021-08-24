@@ -1,3 +1,10 @@
+# Checkout this application : https://ez-change.netlify.app/
+
+This program has currencies of Rs. 1, 5, 10, 20, 100, 500, 2000.
+user enters a bill amount say Rs. 243.
+user then enters a cash given say Rs. 2000.
+Now this application, helps the user by telling how can he/she return the change to the customer with minimum number of notes?
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
